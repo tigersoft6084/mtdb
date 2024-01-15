@@ -28,6 +28,7 @@ use App\Http\Controllers\UserWatchlistController;
 use App\Http\Controllers\VideoApproveController;
 use App\Http\Controllers\VideosController;
 use App\Http\Controllers\WatchController;
+use App\Http\Controllers\HostController;
 use Common\Channels\ChannelController;
 
 Route::group(['prefix' => 'v1'], function() {
@@ -69,6 +70,14 @@ Route::group(['prefix' => 'v1'], function() {
         Route::post('title-tags/{type}', [AdminTitleTagsController::class, 'store']);
         Route::put('title-tags/{type}/{tagId}', [AdminTitleTagsController::class, 'update']);
         Route::delete('title-tags/{type}/{ids}', [AdminTitleTagsController::class, 'destroy']);
+
+        //Hosts
+
+        Route::get('hosts', [HostController::class, 'index']);
+        Route::get('hosts/{hostId}', [HostController::class, 'show']);
+        Route::post('hosts', [HostController::class, 'store']);
+        Route::put('hosts/{hostId}', [HostController::class, 'update']);
+        Route::delete('hosts/{ids}', [HostController::class, 'destroy']);
 
         // IMAGES
         Route::post('images', [ImagesController::class, 'store']);

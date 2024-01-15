@@ -26,6 +26,9 @@ import {ProfileFollowersPanel} from '@app/profile/panels/profile-followers-panel
 import {ProfileFollowedUsersPanel} from '@app/profile/panels/profile-followed-users-panel';
 import {SearchPage} from '@app/search/search-page';
 
+import {RequestsIndexPage} from '@app/requests/pages/requests-index-page/requests-index-page';
+import {EditRequestPage} from '@app/requests/pages/edit-request-page';
+import {CreateRequestPage} from '@app/requests/pages/create-request-page';
 // import {RequestListsIndexPage} from '@app/request-lists/pages/request-lists-index-page/request-lists-index-page';
 // import {EditRequestListPage} from '@app/request-lists/pages/edit-request-list-page';
 // import {CreateRequestListPage} from '@app/request-lists/pages/create-request-list-page';
@@ -45,35 +48,34 @@ const RouteConfig: RouteObject[] = [
     path: 'search/:query',
     element: <SearchPage />,
   },
-  
   // Reqeust Lists
   {
-    path: '/lists',
+    path: '/requests',
     element: (
       <AuthRoute>
-        <UserListsIndexPage />
+        <RequestsIndexPage />
       </AuthRoute>
     ),
   },
   {
-    path: '/lists/new',
+    path: '/requests/new',
     element: (
       <AuthRoute>
         <SitePageLayout>
-          <CreateUserListPage />
+          <CreateRequestPage />
         </SitePageLayout>
       </AuthRoute>
     ),
   },
   {
-    path: '/lists/:slugOrId',
+    path: '/requests/:slugOrId',
     element: <ChannelPage type="list" />,
   },
   {
-    path: '/lists/:slugOrId/edit',
+    path: '/requests/:slugOrId/edit',
     element: (
       <SitePageLayout>
-        <EditUserListPage />
+        <EditRequestPage />
       </SitePageLayout>
     ),
   },

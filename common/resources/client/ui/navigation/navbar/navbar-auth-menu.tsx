@@ -102,7 +102,7 @@ export function NavbarAuthMenu({children, items}: Props) {
           value="request"
           startIcon={<MovieCreationIcon />}
           onSelected={() => {
-            navigate("/request");
+            navigate("/requests");
           }}
         >
           <Trans message="Request Movie" />
@@ -111,7 +111,7 @@ export function NavbarAuthMenu({children, items}: Props) {
           value="schedule"
           startIcon={<TvIcon />}
           onSelected={() => {
-            navigate("/schedule");
+            navigate("/schedules");
           }}
         >
           <Trans message="TV Schedule" />
